@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Camilla Du Queal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+	<header id="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse "  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav">
+				<li class="nav-item">
+				  <a class="nav-link" href="#home">ínicio<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="#sobre">Sobre</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="#skills">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#softSkills">Soft Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#certificacoes">Certificações</a>
+				</li>  
+				<li class="nav-item">
+					<a class="nav-link" href="#projetosPessoais">Projetos Pessoais</a>
+				</li>  
+				<li class="nav-item">
+				  <a class="nav-link" href="#" tabindex="-1">Contato</a>
+				</li>
+			  </ul>
+			</div>
+		</nav>
+						
+							
+	</header>
+	<main>
+		<section id="home">
+			<div id="container"></div>
+		</section>
+		<section id="sobre">
+			<div id="scene-container"></div>
+		</section>
+		<section id="skills">
+			
+		</section>
+		<section id="softSkills">
+			
+		</section>
+		<section id="certificacoes">
+			
+		</section>
+		<section id="projetosPessoais">
+			
+		</section>
+		
+	</main>
+	
+	<script type="module" src="src/three-home.js"></script>
+	<script src="src/about/three.js"></script>
+    <script src="src/about/OrbitControls.js"></script>
+	<script type="module" src="src/about/three-about.js"></script>
+	<script>
+		let container
+		let camera
+		let controls
+		let renderer
+		let scene
+		let mesh
+
+		function init() {
+
+		container = document.querySelector( '#scene-container' )
+		scene = new THREE.Scene()
+
+
+
+		createCamera()
+		createControls()
+		createLights()
+		createMeshes()
+		createRenderer()
+
+		renderer.setAnimationLoop( () => {
+
+		
+			render()
+
+		} )
+
+		}
+
+		function createCamera(){
+			const fov = 35
+			const aspect = container.clientWidth / container.clientHeight
+			const near = 0.1
+			const far = 100
+			
+			camera = new THREE.PerspectiveCamera( fov, aspect, near, far )
+			camera.position.set( 10, 10, 10 )
+
+		}
+		function createControls(){
+
+			controls = new THREE.OrbitControls(camera, container)
+
+		}
+
+		function createLights(){
+
+			const ambientLight = new THREE.HemisphereLight(
+			0xddeeff, // bright sky color
+			0x202020, // dim ground color
+			5, // intensity
+			);
+
+			const mainLight = new THREE.DirectionalLight( 0xffffff, 5 )
+			mainLight.position.set( 10, 10, 10 )
+
+			scene.add( ambientLight )
+
+		}
+
+		function createMeshes(){
+
+			const geometry = new THREE.BoxBufferGeometry( 3, 3, 3 )
+			
+			const textureLoader = new THREE.TextureLoader()
+			const texture = textureLoader.load( 'https://avatars0.githubusercontent.com/u/62048657?s=460&u=05c2ae1c62489a3155f8395133cafc5b1ad18259&v=4' )
+
+			texture.encoding = THREE.sRGBEncoding
+			texture.anisotropy = 16
+			
+			const material = new THREE.MeshStandardMaterial( {
+			map: texture,
+			} )
+			
+			mesh = new THREE.Mesh( geometry, material )
+			scene.add( mesh )
+
+		}
+
+		function createRenderer(){
+
+			renderer = new THREE.WebGLRenderer( { antialias: true } )
+			renderer.setSize( container.clientWidth, container.clientHeight )
+
+			renderer.setPixelRatio( window.devicePixelRatio )
+
+			renderer.gammaFactor = 2.2
+			renderer.gammaOutput = true
+
+			renderer.physicallyCorrectLights = true
+			container.appendChild( renderer.domElement )
+
+		}
+
+
+
+		function render() {
+
+			renderer.render( scene, camera )
+
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = container.clientWidth / container.clientHeight
+
+			camera.updateProjectionMatrix()
+			
+			renderer.setSize( container.clientWidth, container.clientHeight )
+
+		}
+
+		window.addEventListener( 'resize', onWindowResize )
+
+		init()
+
+	</script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+
+
+
+</body>
+
+</html>
