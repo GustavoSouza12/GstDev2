@@ -63,7 +63,7 @@ function createLights(){
 
 function createMeshes(){
 
-    const geometry = new THREE.BoxBufferGeometry( 3, 3, 3 )
+    const geometry = new THREE.DodecahedronBufferGeometry( 1, 0 )
     
     const textureLoader = new THREE.TextureLoader()
     const texture = textureLoader.load( 'https://avatars0.githubusercontent.com/u/62048657?s=460&u=05c2ae1c62489a3155f8395133cafc5b1ad18259&v=4' )

@@ -12,8 +12,8 @@
 <body>
 	<header id="header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse "  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<a class="navbar-brand" href=""><img src="img/logo.png" style="height: 80px; width: 150px;" alt=""></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
@@ -28,7 +28,7 @@
 				  <a class="nav-link" href="#skills">Skills</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#softSkills">Soft Skills</a>
+					<a class="nav-link" href="#soft-skills">Soft Skills</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#certificacoes">Certificações</a>
@@ -47,21 +47,79 @@
 	</header>
 	<main>
 		<section id="home">
-			<div id="container"></div>
-		</section>
-		<section id="sobre">
-			<div id="scene-container"></div>
-		</section>
-		<section id="skills">
+			<div id="container">
+				<div class="teste"><img src="img/logo.png" alt=""></div>
+			</div>
 			
 		</section>
-		<section id="softSkills">
+		<section id="sobre">
+			<div class="content-about1">
+				<h2>changing the world by codding</h2>
+				<p>im here asdpokeapok apeoksp ak</p>
+			</div>
+			<div class="content-about2">
+				<h2>changing the 2222222222</h2>
+				<p>im here asdpokeapok apeoksp ak</p>
+			</div>
+			<div class="content-about3">
+				<h2>changing the 33333333</h2>
+				<p>im here asdpokeapok apeoksp ak</p>
+			</div>
+			<div  id="scene-container"></div>
+			
+		</section>
+		<section id="skills">
+			<h2>Habilidades</h2>
+			<div id="">
+				<h3>Trindade do Frontend</h3>
+				<ul>
+					<li>Html5</li>
+					<li>Css</li>
+					<li>Javascript</li>
+				</ul>
+			</div>	
+			<div id="">
+				<h3>Bibliotecas</h3>
+				<ul>
+					<li>React.js</li>
+					<li>Three.js</li>
+				</ul>
+			</div>
+			<div id="">
+				<h3>Frameworks</h3>
+				<ul>
+					<li>Bootstrap</li>
+					<li>jQuery</li>
+				</ul>
+			</div>
+			<div id="">
+				<h3>Pré-processador</h3>
+				<ul>
+					<li>Sass</li>
+				</ul>
+			</div>
+			<div id="">
+				<h3>Gerenciamento de código</h3>
+				<ul>
+					<li>Git</li>
+					<li>Github</li>
+				</ul>
+			</div>
+			<div id="">
+				<h3>Gerenciamento de pacotes</h3>
+				<ul>
+					<li>npm</li>
+				</ul>
+			</div>
+
+		</section>
+		<section id="soft-skills">
 			
 		</section>
 		<section id="certificacoes">
 			
 		</section>
-		<section id="projetosPessoais">
+		<section id="projetos">
 			
 		</section>
 		
@@ -94,7 +152,7 @@
 
 		renderer.setAnimationLoop( () => {
 
-		
+			rotation()
 			render()
 
 		} )
@@ -166,7 +224,12 @@
 
 		}
 
-
+		function rotation(){
+			mesh.rotation.x += 0.01
+			mesh.rotation.y += 0.01
+			mesh.rotation.z += 0.01
+		}
+	
 
 		function render() {
 

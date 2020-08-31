@@ -6,60 +6,88 @@ html, body {
 
 	background: #161616;
 	overflow-x: hidden;
-
+	font-size: 100%;
 	scroll-behavior: smooth;
 }
+
 section {
 	height: 100vh;
 	width: 100vw;
+	position: relative;
+	float: right;
+	text-align: center;
 }
-main section #home::after{
+
+
+
+/*home section */
+#container::after{
 	content: '';
 	position: absolute;
 	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: red;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.teste{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate( -50%, -50%);
+	width: 90vw;
+	height: 400px;
+
+	background-color: rgb(243, 243, 243);
+	padding-top: 50px;
+	z-index: 10000;
+	border-radius: 40px;
+}
+.teste img{
+	width: 27%;
+	height: 70%;
 }
 
-#header{
-	position: fixed;
-	top: 0;
-	height: 100vh !important;
-	width: 25vw;
+/*about section */
+.content-about1, .content-about2, .content-about3{
+	position: absolute;
+	width: 25%;
 }
-#header nav {
-	height: 100vh !important;
+.content-about1{
+	top:5%;
+	left: 3%;
 }
-#header .navbar {
-	flex-direction: column !important;
-	text-align: center;
+.content-about2{
+	top:25%;
+	right:3%;
 }
-#header .navbar div .navbar-nav{
-	flex-direction: column !important;
-	text-align: center;
+.content-about3{
+	top:60%;
+	left:3%;
 }
-
-
-
-
 
 
 #scene-container {
     position: relative;
-	width: 40vw;
-	float: right !important;
+	width: 33.3vw;
+	margin: 0 auto;
 	height: 100vh;
+	cursor: all-scroll;
 	
   }
+/* softskills */
 
+.skills{
+	text-align: center;
+}
+#skills div ul{
+	
+	padding-left: 0;
+}
+#skills div ul li{
+	list-style-type: none;
+}
 
 @media only screen and (max-width: 868px){
-	#header nav {
-		color: red !important;
-		position: absolute;
-		top: 0;
-		height: 10vh !important;
-		width: 100vw !important;
-	}
+	
 }
