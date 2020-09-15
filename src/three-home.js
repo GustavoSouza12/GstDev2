@@ -3,8 +3,7 @@ import * as THREE from '../src/three.module.js';
 		
 
 		var container
-		var camera, scene, renderer, mesh, ambientLight
-
+		var camera, scene, renderer, mesh
 		var instances = 5000;
 		var lastTime = 0;
 
@@ -13,6 +12,7 @@ import * as THREE from '../src/three.module.js';
 		var tmpM = new THREE.Matrix4();
 		var currentM = new THREE.Matrix4();
 
+		
 		init();
 		animate();
 
@@ -26,12 +26,14 @@ import * as THREE from '../src/three.module.js';
 
 
 			scene = new THREE.Scene();
-			scene.background = new THREE.Color(  'black' );
+			scene.background = new THREE.Color(  '#271f12' );
 
 			// geometry
 
 			var geometry = new THREE.InstancedBufferGeometry();
 
+
+			
 			// per mesh data x,y,z,w,u,v,s,t for 4-element alignment
 			// only use x,y,z and u,v; but x, y, z, nx, ny, nz, u, v would be a good layout
 			var vertexBuffer = new THREE.InterleavedBuffer( new Float32Array( [
@@ -132,8 +134,16 @@ import * as THREE from '../src/three.module.js';
 				mesh.setMatrixAt( i, matrix );
 
 			}
+			
+			
 
 			scene.add( mesh );
+
+			
+
+	
+			
+	
 
 			renderer = new THREE.WebGLRenderer();
 			renderer.setPixelRatio( window.devicePixelRatio );
@@ -175,6 +185,7 @@ import * as THREE from '../src/three.module.js';
 
 		function render() {
 
+			
 			var time = performance.now();
 
 			mesh.rotation.y = time * 0.00005;

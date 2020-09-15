@@ -2,9 +2,7 @@ html, body {
 	margin: 0%;
 	padding: 0%;
 	width: 100%;
-	height: 100vh;
-
-	background: #161616;
+	height: 100vh;	
 	overflow-x: hidden;
 	font-size: 100%;
 	scroll-behavior: smooth;
@@ -16,11 +14,147 @@ section {
 	position: relative;
 	float: right;
 	text-align: center;
+	background-color: #271f12;
+
+}
+h2,h3,h4,h5,h6 {
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+font-family: 'Playfair Display', serif;
+    position: relative;
+	text-transform: uppercase;	
+	font-size: 45px;
+	margin: 0;
+	font-weight: 700;
+	display:inline
+}
+
+h1:after {
+    background: none;
+    content: attr(data-heading);
+    left: 0;
+	top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+		-1px 0 1px #c6bb9f, 
+		0 1px 1px #c6bb9f, 
+		5px 5px 10px rgba(0, 0, 0, 0.4),
+		-5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+li{
+	background: linear-gradient(to bottom, #cfc09f 22%,#d49517 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+font-family: 'Playfair Display', serif;
+    position: relative;
+	text-transform: uppercase;	
+	font-size: 16px;
+	margin: 0;
+	font-weight: 400;
+}
+p{
+	background: linear-gradient(to bottom, #cfc09f 22%,#db9811 78%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+font-family: 'Playfair Display', serif;
+    position: relative;
+	text-transform: uppercase;	
+	font-size: 16px;
+	margin: 0;
+	font-weight: 400;
 }
 
 
+.navbar{
+   
+    
+    background-color: rgb(0, 0, 0);
+	color: black;
+}
+.navbar .navbar-brand{
+	z-index: 1000;
+	height: 10vh;
+	width: 220px;
+}
+
+.nav-item{
+    margin: 20px 0px 20px 0px;
+    font-size: 25px;
+    margin-right: 20px;
+    transform: skewx(4deg);
+    
+}
+.nav-link{
+	color: black !important; 
+	
+}
+.nav-link:hover{
+	color: white;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    top: 30px;
+    left: 30%;
+    right: 30%;
+    height: 3px;
+    margin-top: 20px;
+  
+    background-color: #ffecb3;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.1s ease-in;
+  } 
+
+
+ 
+.nav-link:hover::after {
+    position: absolute;
+    margin-top: 20px;
+   
+    -webkit-transform: scaleX(3);
+    -ms-transform: scaleX(3);
+    transform: scaleX(3);
+  }
+
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    top: -7px;
+    left: 30%;
+    right: 30%;
+    height: 3px;
+    margin-top: 10px;
+  
+    background-color: #ffecb3;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.1s ease-in;
+  } 
+
+
+ 
+.nav-link:hover::before {
+    position: absolute;
+  
+   
+    -webkit-transform: scaleX(3);
+    -ms-transform: scaleX(3);
+    transform: scaleX(3);
+  } 
+
 
 /*home section */
+
 #container::after{
 	content: '';
 	position: absolute;
@@ -28,7 +162,7 @@ section {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(39, 31, 18, 0.2);
 }
 .teste{
 	position: absolute;
@@ -49,6 +183,13 @@ section {
 }
 
 /*about section */
+.about-title{
+	position: absolute;
+	left: 50%;
+	top: 2%;
+	transform: translate(-50%);
+	font-size: 45px;
+}
 .content-about1, .content-about2, .content-about3{
 	position: absolute;
 	width: 25%;
@@ -70,10 +211,11 @@ section {
 #scene-container {
     position: relative;
 	width: 33.3vw;
+	
 	margin: 0 auto;
 	height: 100vh;
 	cursor: all-scroll;
-	
+	background: linear-gradient(to right, red, purple);
   }
 /* softskills */
 
