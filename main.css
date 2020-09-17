@@ -9,12 +9,13 @@ html, body {
 }
 
 section {
-	height: 100vh;
+	height: auto;
 	width: 100vw;
 	position: relative;
 	float: right;
 	text-align: center;
 	background-color: #271f12;
+	
 
 }
 h2,h3,h4,h5,h6 {
@@ -25,7 +26,7 @@ h2,h3,h4,h5,h6 {
 font-family: 'Playfair Display', serif;
     position: relative;
 	text-transform: uppercase;	
-	font-size: 45px;
+	font-size: 40px !important;
 	margin: 0;
 	font-weight: 700;
 	display:inline
@@ -217,7 +218,7 @@ font-family: 'Playfair Display', serif;
 	cursor: all-scroll;
 	background: linear-gradient(to right, red, purple);
   }
-/* softskills */
+/* skills */
 
 .skills{
 	text-align: center;
@@ -228,6 +229,11 @@ font-family: 'Playfair Display', serif;
 }
 #skills div ul li{
 	list-style-type: none;
+}
+
+/* services */
+.card-body{
+	background-color: white;
 }
 
 @media only screen and (max-width: 868px){
