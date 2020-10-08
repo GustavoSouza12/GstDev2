@@ -96,7 +96,7 @@ import * as THREE from '../src/three.module.js';
 			// material
 
 			var material = new THREE.MeshBasicMaterial();
-			material.map = new THREE.TextureLoader().load( 'https://avatars0.githubusercontent.com/u/62048657?s=460&u=05c2ae1c62489a3155f8395133cafc5b1ad18259&v=4' );
+			material.map = new THREE.TextureLoader().load( 'https://media-exp1.licdn.com/dms/image/C4D03AQF_BbkFEYQZQg/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=x-Ed_uo-kfiVxp6HBKUxt6OYisRlQ1pRSq2z8Dg7qyM' );
 
 			// per instance data
 

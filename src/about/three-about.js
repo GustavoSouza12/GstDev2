@@ -1,7 +1,3 @@
-import * as THREE from '../three.module';
-
-
-let container
 let camera
 let controls
 let renderer
@@ -12,7 +8,7 @@ function init() {
 
 container = document.querySelector( '#scene-container' )
 scene = new THREE.Scene()
-
+scene.background = new THREE.Color(  '#271f12' );
 
 
 createCamera()
@@ -23,7 +19,6 @@ createRenderer()
 
 renderer.setAnimationLoop( () => {
 
-    update()
     render()
 
 } )
@@ -49,9 +44,9 @@ function createControls(){
 function createLights(){
 
     const ambientLight = new THREE.HemisphereLight(
-    0xddeeff, // bright sky color
-    0x202020, // dim ground color
-    5, // intensity
+    0xD4AF37, // bright sky color
+    0x7c6724, // dim ground color
+    4, // intensity
     );
 
     const mainLight = new THREE.DirectionalLight( 0xffffff, 5 )
@@ -63,7 +58,7 @@ function createLights(){
 
 function createMeshes(){
 
-    const geometry = new THREE.DodecahedronBufferGeometry( 1, 0 )
+    const geometry = new THREE.BoxBufferGeometry( 3, 3, 3 )
     
     const textureLoader = new THREE.TextureLoader()
     const texture = textureLoader.load( 'https://avatars0.githubusercontent.com/u/62048657?s=460&u=05c2ae1c62489a3155f8395133cafc5b1ad18259&v=4' )
@@ -116,4 +111,3 @@ function onWindowResize() {
 window.addEventListener( 'resize', onWindowResize )
 
 init()
-
