@@ -1,3 +1,7 @@
+.yellow{
+	color: #d49517;
+}
+
 html, body {
 	margin: 0%;
 	padding: 0%;
@@ -58,9 +62,8 @@ li{
 	font-weight: 400;
 }
 p{
-	background: linear-gradient(to bottom, #cfc09f 22%,#db9811 78%); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+   
     color: #fff;
 	font-family: 'Playfair Display', serif;
     position: relative;
@@ -76,16 +79,22 @@ p{
 	right: 5%;
 }
 .navbar{
-   
-    
     background-color: #3d3324;
-	color: black;
 }
 
 .navbar .navbar-brand{
 	z-index: 1000;
 	height: 10vh;
-	width: 220px;
+	width: 150px;
+	cursor: pointer;
+
+	transition: all ease 0.2s
+}
+.navbar .navbar-brand:hover{
+	z-index: 1000;
+	height: 10vh;
+	width: 180px;
+
 }
 
 .nav-item{
@@ -181,24 +190,20 @@ p{
 	height: 100%;
 	background: linear-gradient(to top, #271f12 1%, transparent 99%);
 }
-.teste{
+#container .container-content{
 	position: absolute;
-	top:50%;
-	left:50%;
-	transform: translate( -50%, -50%);
-	width: 90vw;
-	height: 400px;
+	display: flex;
 
-	background-color: rgb(243, 243, 243);
-	padding-top: 50px;
-	z-index: 10000;
-	border-radius: 40px;
-}
-.teste img{
-	width: 27%;
-	height: 70%;
-}
+	align-items: center;
 
+	margin: 40px 15px 0px 15px;
+}
+#container .container-content .title{
+	color: white;
+	font-size: 64px;
+
+	width: 50%;
+}
 /*about section */
 .about-title{
 	position: absolute;

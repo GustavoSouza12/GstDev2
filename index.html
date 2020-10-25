@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Camilla Du Queal</title>
+	<title>Gstdev</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="main.css">
@@ -10,21 +10,21 @@
 	<script src="https://kit.fontawesome.com/38c2c8cacd.js" crossorigin="anonymous"></script>
 	<!--bootstrap-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<!--materialize-->
-
+	<!--aos.js-->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 </head>
 <body>
 	<header id="header">
-		<nav class="  navbar navbar-expand-md navbar-dark navbar-background  sticky-top border-light">
+		<nav class="navbar navbar-expand-md navbar-dark navbar-background  sticky-top border-light" >
 			<div class="container-fluid">
-				<img class="navbar-brand" src="img/logo.png">
+				<img class="navbar-brand" src="img/gstdev_logo.png" data-aos="fade-down" data-aos-delay="1800" >
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
+					<ul class="navbar-nav ml-auto" data-aos="fade-down" data-aos-delay="1800">
 						<li class="nav-item"><a class="nav-link" href ="#home">Ínicio</a></li>
 						<li class="nav-item"><a class="nav-link active" href ="#about">Sobre</a></li>
 						<li class="nav-item"><a class="nav-link" href ="#skills">Habilidades</a></li>
@@ -34,13 +34,15 @@
 					</ul>
 				</div>    
 			</div>
-			<a class="go_top_button" href="#header">TOP</a>
 		</nav>
 	</header>
 	<main>
 		<section id="home">
 			<div id="container">
-				
+				<div class="container-content">
+						<h1 data-aos="fade-right" data-aos-delay="1800" class="title">Olá, sou o <span class="yellow">Gstdev</span> e sou um desenvolvedor frontend!</h1>
+					<img data-aos="fade-left" data-aos-delay="1800" src="img/inicio_image.svg" alt="" class="inicio-image">	
+				</div>	
 			</div>	
 		</section>
 		<section id="about">
@@ -218,8 +220,11 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<!--bootstrap-->
-	
+	<!--aos.js-->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 	<!--three.js-->
 	<script type="module" src="src/three-home.js"></script>
 	<script src="src/about/three.js"></script>
