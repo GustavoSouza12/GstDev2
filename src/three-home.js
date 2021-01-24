@@ -26,7 +26,7 @@ import * as THREE from '../src/three.module.js';
 
 
 			scene = new THREE.Scene();
-			scene.background = new THREE.Color(  '#271f12' );
+			scene.background = new THREE.Color(  '#031CA6' );
 
 			// geometry
 
@@ -96,7 +96,7 @@ import * as THREE from '../src/three.module.js';
 			// material
 
 			var material = new THREE.MeshBasicMaterial();
-			material.map = new THREE.TextureLoader().load( 'https://media-exp1.licdn.com/dms/image/C4D03AQF_BbkFEYQZQg/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=x-Ed_uo-kfiVxp6HBKUxt6OYisRlQ1pRSq2z8Dg7qyM' );
+			material.map = new THREE.TextureLoader().load( 'https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png' );
 
 			// per instance data
 
